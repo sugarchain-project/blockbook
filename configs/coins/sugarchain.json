@@ -22,7 +22,7 @@
     "package_name": "backend-sugarchain",
     "package_revision": "satoshilabs-1",
     "system_user": "sugarchain",
-    "version": "v0.16.3.21rc1",
+    "version": "0.16.3.21rc1",
     "binary_url": "https://github.com/sugarchain-project/sugarchain/releases/download/release-0.16.3.21rc1/sugarchain-0.16.3.21rc1-x86_64-linux-gnu.tar.gz",
     "verification_type": "gpg-sha256",
     "verification_source": "https://github.com/sugarchain-project/sugarchain/releases/download/release-0.16.3.21rc1/SHA256SUMS.asc",
