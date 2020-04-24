@@ -23,9 +23,9 @@
     "package_revision": "satoshilabs-1",
     "system_user": "sugarchain",
     "version": "0.16.3.21rc1",
-    "binary_url": "https://github.com/sugarchain-project/sugarchain/releases/download/release-0.16.3.21rc1/sugarchain-0.16.3.21rc1-x86_64-linux-gnu.tar.gz",
-    "verification_type": "sha256",
-    "verification_source": "fd676441889bcfff2b26f94945c777bb1cd1f7338c25316f79d21dd9431ee556",
+    "binary_url": "https://github.com/sugarchain-project/sugarchain/releases/download/v0.16.3.30-moonlight/sugarchain-0.16.3.30-moonlight-x86_64-linux-gnu.tar.gz",
+    "verification_type": "gpg-sha256",
+    "verification_source": "https://github.com/sugarchain-project/sugarchain/releases/download/v0.16.3.30-moonlight/SHA256SUMS.asc",
     "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": [
       "bin/sugarchain-qt"
