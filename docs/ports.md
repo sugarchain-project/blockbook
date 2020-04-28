@@ -60,5 +60,6 @@
 | Flo Testnet          | 19066                   | 19166                 | 18066            | 48366                       |
 | Qtum Testnet         | 19088                   | 19188                 | 18088            | 48388                       |
 | OmotenashicoinTestnet| 19089                   | 19189                 | 18089            | 48389                       |
+| Sugarchain Testnet   | 19090                   | 19190                 | 18090            | 48390                       |
 
 > NOTE: This document is generated from coin definitions in `configs/coins`.
