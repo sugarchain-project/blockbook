@@ -381,12 +381,6 @@ func (b *BulkConnect) Close() error {
 			return err
 		}
 	}
-	var err error
-	b.d.is.BlockTimes, err = b.d.loadBlockTimes()
-	if err != nil {
-		return err
-	}
-
 	if err := b.d.SetInconsistentState(false); err != nil {
 		return err
 	}

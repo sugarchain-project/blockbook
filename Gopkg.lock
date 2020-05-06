@@ -49,7 +49,7 @@
   branch = "master"
   name = "github.com/martinboehm/btcd"
   packages = ["blockchain","btcec","chaincfg","chaincfg/chainhash","database","txscript","wire"]
-  revision = "83af86142d93bb4340e85352d6f8d974c196ffe9"
+  revision = "8e7c0427fee5d4778c5d4eb987150369e3ca1d0e"
 
 [[projects]]
   branch = "master"
@@ -145,7 +145,7 @@
   branch = "master"
   name = "github.com/martinboehm/btcutil"
   packages = [".","base58","bech32","chaincfg","hdkeychain","txscript"]
-  revision = "d7706467ae8f226fc75667a7da185964698d2373"
+  revision = "48696086722394cad05afcd42d3793061337008a"
 
 [[projects]]
   branch = "master"
@@ -235,7 +235,7 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["ripemd160", "sha3"]
-  revision = "a832865fa7ada6126f4c6124ac49f71be71bff2a"
+  revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
 
 [[projects]]
   branch = "master"

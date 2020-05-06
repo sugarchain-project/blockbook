@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"path/filepath"
 	"reflect"
-	"strings"
 	"testing"
 	"time"
 
@@ -178,8 +177,8 @@ func testGetTransaction(t *testing.T, h *TestHandler) {
 		// CoinSpecificData are not specified in the fixtures
 		got.CoinSpecificData = nil
 
-		normalizeAddresses(want, h.Chain.GetChainParser())
-		normalizeAddresses(got, h.Chain.GetChainParser())
+		normalizeEmptyAddresses(want)
+		normalizeEmptyAddresses(got)
 
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("GetTransaction() got %+#v, want %+#v", got, want)
@@ -197,8 +196,8 @@ func testGetTransactionForMempool(t *testing.T, h *TestHandler) {
 			t.Fatal(err)
 		}
 
-		normalizeAddresses(want, h.Chain.GetChainParser())
-		normalizeAddresses(got, h.Chain.GetChainParser())
+		normalizeEmptyAddresses(want)
+		normalizeEmptyAddresses(got)
 
 		// transactions parsed from JSON may contain additional data
 		got.Confirmations, got.Blocktime, got.Time, got.CoinSpecificData = 0, 0, 0, nil
@@ -209,28 +208,15 @@ func testGetTransactionForMempool(t *testing.T, h *TestHandler) {
 }
 
 // empty slice can be either []slice{} or nil; reflect.DeepEqual treats them as different value
-// remove checksums from ethereum addresses
-func normalizeAddresses(tx *bchain.Tx, parser bchain.BlockChainParser) {
+func normalizeEmptyAddresses(tx *bchain.Tx) {
 	for i := range tx.Vin {
 		if len(tx.Vin[i].Addresses) == 0 {
 			tx.Vin[i].Addresses = nil
-		} else {
-			if parser.GetChainType() == bchain.ChainEthereumType {
-				for j := range tx.Vin[i].Addresses {
-					tx.Vin[i].Addresses[j] = strings.ToLower(tx.Vin[i].Addresses[j])
-				}
-			}
 		}
 	}
 	for i := range tx.Vout {
 		if len(tx.Vout[i].ScriptPubKey.Addresses) == 0 {
 			tx.Vout[i].ScriptPubKey.Addresses = nil
-		} else {
-			if parser.GetChainType() == bchain.ChainEthereumType {
-				for j := range tx.Vout[i].ScriptPubKey.Addresses {
-					tx.Vout[i].ScriptPubKey.Addresses[j] = strings.ToLower(tx.Vout[i].ScriptPubKey.Addresses[j])
-				}
-			}
 		}
 	}
 }
